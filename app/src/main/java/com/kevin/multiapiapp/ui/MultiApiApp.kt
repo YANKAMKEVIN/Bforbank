@@ -9,6 +9,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.kevin.multiapiapp.common.navigation.graph.GraphDestination
 import com.kevin.multiapiapp.presentation.ui.home.HomeScreen
+import com.kevin.multiapiapp.presentation.ui.pokemon.list.PokemonListScreen
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
@@ -27,5 +28,6 @@ fun AppNavHost(navController: NavHostController) {
 
     NavHost(navController = navController, startDestination = GraphDestination.Home.route) {
         composable(GraphDestination.Home.route) { HomeScreen(navController) }
+        composable(GraphDestination.PokemonList.route) { PokemonListScreen(navController) }
     }
 }
