@@ -21,4 +21,8 @@ dependencyResolutionManagement {
 
 rootProject.name = "MultiApiApp"
 include(":app")
- 
+include(":data")
+include(":domain")
+include(":presentation")
+include(":core:testing")
+include(":core:common")
