@@ -76,9 +76,6 @@ dependencies {
     implementation(libs.coil)
     implementation(libs.coil.gif)
 
-    //Mapbox SDK
-    implementation(libs.mapbox)
-
     //Test
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -92,4 +89,7 @@ dependencies {
     //Debug
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    implementation(project(":core:common"))
+
 }
