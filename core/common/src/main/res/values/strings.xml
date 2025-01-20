@@ -14,4 +14,5 @@
     <string name="poke_type">Type</string>
     <string name="poke_weight">Weight</string>
     <string name="poke_title">Discover Pokémon!</string>
+    <string name="go_to_pokemon">Go to Pokemon</string>
 </resources>

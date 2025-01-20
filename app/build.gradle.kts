@@ -75,4 +75,6 @@ dependencies {
 
     implementation(project(":presentation"))
     implementation(project(":core:common"))
+    implementation(project(":data"))
+    implementation(project(":domain"))
 }
