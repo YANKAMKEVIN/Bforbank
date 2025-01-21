@@ -1,6 +1,7 @@
 package com.kevin.multiapiapp.data.datasource.pokemon
 
 import com.kevin.multiapiapp.common.network.NetworkResponse
+import com.kevin.multiapiapp.data.model.pokemon.PokemonDetailsResponse
 import com.kevin.multiapiapp.data.model.pokemon.PokemonListResponse
 
 /**
@@ -20,5 +21,14 @@ interface PokemonDataSource {
      * @return A [NetworkResponse] containing a [PokemonListResponse] with the list of Pokémon.
      */
     suspend fun getAllPokemon(limit: Int, offset: Int): NetworkResponse<PokemonListResponse>
+
+    /**
+     * Fetches the details of a specific Pokémon by its ID.
+     * This method should be implemented to fetch detailed information about a Pokémon.
+     *
+     * @param id The ID of the Pokémon whose details are requested.
+     * @return A [NetworkResponse] containing a [PokemonDetailsResponse] with the details of the Pokémon.
+     */
+    suspend fun getPokemonDetails(id: Int): NetworkResponse<PokemonDetailsResponse>
 
 }
