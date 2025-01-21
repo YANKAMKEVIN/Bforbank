@@ -61,6 +61,7 @@ dependencies {
 
     //Hilt
     implementation(libs.hilt.android)
+    implementation(libs.androidx.benchmark.common)
     kapt(libs.hilt.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
 

@@ -16,6 +16,9 @@ android {
         versionCode = 1
         versionName = "1.0"
 
+        buildConfigField("String", "SPOTIFY_CLIENT_ID", "\"${project.property("spotifyClientId")}\"")
+        buildConfigField("String", "SPOTIFY_CLIENT_SECRET", "\"${project.property("spotifyClientSecret")}\"")
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
@@ -39,6 +42,7 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
+        buildConfig = true
         compose = true
     }
     composeOptions {
