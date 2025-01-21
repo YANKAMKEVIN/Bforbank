@@ -71,4 +71,7 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     testImplementation(libs.mockk)
     testImplementation(libs.kotlin.test)
+
+    implementation(project(":domain"))
+    implementation(project(":core:common"))
 }

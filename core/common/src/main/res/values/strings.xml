@@ -1,4 +1,18 @@
 <resources>
     <string name="explore_apis">Explore APIs</string>
     <string name="app_name">MultiApiApp</string>
+    <string name="poke_ability">Ability</string>
+    <string name="poke_api">Poke API</string>
+    <string name="poke_base_stat">Base Stat</string>
+    <string name="poke_description">Here you can find a list of all available Pokémon. You can click on any Pokémon to view more details about them, including their stats, abilities, and more. Enjoy!</string>
+    <string name="poke_description_background">Background</string>
+    <string name="poke_description_back">Pokemon back</string>
+    <string name="poke_description_front">Pokemon front</string>
+    <string name="poke_height">Height</string>
+    <string name="poke_listen_cries">Listen to cries</string>
+    <string name="poke_stop_listen_cries">Stop</string>
+    <string name="poke_type">Type</string>
+    <string name="poke_weight">Weight</string>
+    <string name="poke_title">Discover Pokémon!</string>
+    <string name="go_to_pokemon">Go to Pokemon</string>
 </resources>

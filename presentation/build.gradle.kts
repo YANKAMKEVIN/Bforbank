@@ -91,5 +91,6 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     implementation(project(":core:common"))
-
+    implementation(project(":domain"))
+    testImplementation(project(":core:testing"))
 }
