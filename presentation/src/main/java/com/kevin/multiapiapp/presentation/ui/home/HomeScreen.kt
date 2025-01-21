@@ -48,6 +48,15 @@ fun HomeScreen(navController: NavHostController) {
         )
 
         ApiCard(
+            backgroundColor = Color(0xFF6200EE),
+            iconResId = R.drawable.ic_unsplash,
+            title = stringResource(id = R.string.unsplash_api),
+            description = stringResource(id = R.string.unsplash_description),
+            onClick = { navController.navigate(GraphDestination.Unsplash.route) },
+            buttonText = stringResource(id = R.string.go_to_unsplash)
+        )
+
+        ApiCard(
             backgroundColor = Color(0xFFFFEB3B),
             iconResId = R.drawable.ic_pokemon,
             title = stringResource(id = R.string.poke_api),

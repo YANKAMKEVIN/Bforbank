@@ -13,4 +13,7 @@ sealed class GraphDestination(val route: String) {
     }
 
     data object Spotify : GraphDestination("spotify_screen")
+    data object Unsplash : GraphDestination(
+        "unsplash_screen"
+    )
 }
