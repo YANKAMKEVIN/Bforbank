@@ -5,6 +5,7 @@
     <string name="poke_api">Poke API</string>
     <string name="poke_base_stat">Base Stat</string>
     <string name="go_to_spotify">Go to Spotify</string>
+    <string name="go_to_unsplash">Go to Unsplash</string>
     <string name="poke_description">Here you can find a list of all available Pokémon. You can click on any Pokémon to view more details about them, including their stats, abilities, and more. Enjoy!</string>
     <string name="poke_description_background">Background</string>
     <string name="poke_description_back">Pokemon back</string>
@@ -22,4 +23,13 @@
     <string name="spotify_description_search_tracks">You can search for photos here by typing your query into the search bar. Enjoy!</string>
     <string name="spotify_text_no_tracks_found">No tracks found, please try another search</string>
     <string name="spotify_title_search_tracks">Search for Tracks</string>
+    <string name="unsplash_api">Unsplash API</string>
+    <string name="unsplash_description">Unsplash</string>
+    <string name="unsplash_description_search_photos">You can search for photos here by typing your query into the search bar. For some images, you will even find descriptions. Enjoy!</string>
+    <string name="unsplash_image_description">Unsplash Image</string>
+    <string name="unsplash_label_search_field">Type your text here</string>
+    <string name="unsplash_loading_photos">Loading photos...</string>
+    <string name="unsplash_text_no_photos_found">No photos found, please try another search</string>
+    <string name="unsplash_title_search_photos">Search for Photos</string>
+    <string name="unsplash_dialog_close">Close Dialog</string>
 </resources>

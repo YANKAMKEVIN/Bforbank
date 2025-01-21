@@ -13,6 +13,7 @@ import com.kevin.multiapiapp.presentation.ui.home.HomeScreen
 import com.kevin.multiapiapp.presentation.ui.pokemon.details.PokemonDetailsScreen
 import com.kevin.multiapiapp.presentation.ui.pokemon.list.PokemonListScreen
 import com.kevin.multiapiapp.presentation.ui.spotify.SpotifyScreen
+import com.kevin.multiapiapp.presentation.ui.unsplash.UnsplashScreen
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
@@ -39,5 +40,6 @@ fun AppNavHost(navController: NavHostController) {
             )
         }
         composable(GraphDestination.Spotify.route) { SpotifyScreen() }
+        composable(GraphDestination.Unsplash.route) { UnsplashScreen() }
     }
 }
