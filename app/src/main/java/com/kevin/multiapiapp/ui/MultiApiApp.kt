@@ -7,8 +7,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.kevin.multiapiapp.common.POKEMON_ID
 import com.kevin.multiapiapp.common.navigation.graph.GraphDestination
 import com.kevin.multiapiapp.presentation.ui.home.HomeScreen
+import com.kevin.multiapiapp.presentation.ui.pokemon.details.PokemonDetailsScreen
 import com.kevin.multiapiapp.presentation.ui.pokemon.list.PokemonListScreen
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -29,5 +31,11 @@ fun AppNavHost(navController: NavHostController) {
     NavHost(navController = navController, startDestination = GraphDestination.Home.route) {
         composable(GraphDestination.Home.route) { HomeScreen(navController) }
         composable(GraphDestination.PokemonList.route) { PokemonListScreen(navController) }
+        composable(GraphDestination.PokemonDetails.route) { backStackEntry ->
+            val pokemonId = backStackEntry.arguments?.getString(POKEMON_ID)
+            PokemonDetailsScreen(
+                pokemonId = pokemonId?.toIntOrNull()
+            )
+        }
     }
 }

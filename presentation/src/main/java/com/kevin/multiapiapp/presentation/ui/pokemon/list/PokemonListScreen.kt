@@ -33,8 +33,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import com.kevin.multiapiapp.common.utils.reachedBottom
 import com.kevin.multiapiapp.common.R
+import com.kevin.multiapiapp.common.navigation.graph.GraphDestination
+import com.kevin.multiapiapp.common.utils.reachedBottom
 
 @Composable
 fun PokemonListScreen(
@@ -100,7 +101,16 @@ fun PokemonListScreen(
                         state = scrollState
                     ) {
                         items(state.pokemonList) { pokemon ->
-                            PokemonItem(pokemon = pokemon)
+                            PokemonItem(pokemon = pokemon) {
+                                val pokemonId = extractPokemonId(pokemon.url)
+                                pokemonId?.let {
+                                    navController.navigate(
+                                        GraphDestination.PokemonDetails.withPokeId(
+                                            pokemonId
+                                        )
+                                    )
+                                }
+                            }
                         }
 
                         if (state.isLoadingMore) {

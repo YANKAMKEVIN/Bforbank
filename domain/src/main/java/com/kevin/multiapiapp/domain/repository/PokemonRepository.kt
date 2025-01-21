@@ -1,5 +1,6 @@
 package com.kevin.multiapiapp.domain.repository
 
+import com.kevin.multiapiapp.domain.model.pokemon.PokemonDetailsDomain
 import com.kevin.multiapiapp.domain.model.pokemon.PokemonListDomain
 import kotlinx.coroutines.flow.Flow
 
@@ -18,4 +19,12 @@ interface PokemonRepository {
      * @return A [Flow] emitting a [PokemonListDomain] containing the list of Pokémon.
      */
     suspend fun getAllPokemon(limit: Int = 20, offset: Int): Flow<PokemonListDomain>
+
+    /**
+     * Fetches the details of a specific Pokémon.
+     *
+     * @param id The ID of the Pokémon whose details are requested.
+     * @return A [Flow] emitting a [PokemonDetailsDomain] containing the details of the Pokémon.
+     */
+    suspend fun getPokemonDetails(id: Int): Flow<PokemonDetailsDomain>
 }
