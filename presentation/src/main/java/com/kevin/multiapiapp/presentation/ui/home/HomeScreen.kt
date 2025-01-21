@@ -39,6 +39,15 @@ fun HomeScreen(navController: NavHostController) {
         )
 
         ApiCard(
+            backgroundColor = Color(0xFFE91E63),
+            iconResId = R.drawable.ic_spotify,
+            title = stringResource(id = R.string.spotify_api),
+            description = stringResource(id = R.string.spotify_description),
+            onClick = { navController.navigate(GraphDestination.Spotify.route) },
+            buttonText = stringResource(id = R.string.go_to_spotify)
+        )
+
+        ApiCard(
             backgroundColor = Color(0xFFFFEB3B),
             iconResId = R.drawable.ic_pokemon,
             title = stringResource(id = R.string.poke_api),

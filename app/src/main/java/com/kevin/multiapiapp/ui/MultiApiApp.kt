@@ -12,6 +12,7 @@ import com.kevin.multiapiapp.common.navigation.graph.GraphDestination
 import com.kevin.multiapiapp.presentation.ui.home.HomeScreen
 import com.kevin.multiapiapp.presentation.ui.pokemon.details.PokemonDetailsScreen
 import com.kevin.multiapiapp.presentation.ui.pokemon.list.PokemonListScreen
+import com.kevin.multiapiapp.presentation.ui.spotify.SpotifyScreen
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
@@ -37,5 +38,6 @@ fun AppNavHost(navController: NavHostController) {
                 pokemonId = pokemonId?.toIntOrNull()
             )
         }
+        composable(GraphDestination.Spotify.route) { SpotifyScreen() }
     }
 }
