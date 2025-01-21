@@ -65,5 +65,14 @@ fun HomeScreen(navController: NavHostController) {
             buttonText = stringResource(id = R.string.go_to_pokemon),
             isPokeApiCard = true
         )
+
+        ApiCard(
+            backgroundColor = Color(0xFF03DAC5),
+            iconResId = R.drawable.ic_mapbox,
+            title = stringResource(id = R.string.mapbox_api),
+            description = stringResource(id = R.string.mapbox_description),
+            onClick = { navController.navigate(GraphDestination.Mapbox.route) },
+            buttonText = stringResource(id = R.string.go_to_mapbox)
+        )
     }
 }

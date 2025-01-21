@@ -16,4 +16,7 @@ sealed class GraphDestination(val route: String) {
     data object Unsplash : GraphDestination(
         "unsplash_screen"
     )
+
+    data object Mapbox : GraphDestination("mapbox_screen")
+
 }
