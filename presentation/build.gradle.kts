@@ -59,6 +59,9 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
+    //Mapbox SDK
+    implementation(libs.mapbox)
+
     //Hilt
     implementation(libs.hilt.android)
     implementation(libs.androidx.benchmark.common)

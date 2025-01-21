@@ -1,8 +1,13 @@
 package com.kevin.multiapiapp.domain
 
+import com.kevin.multiapiapp.domain.repository.MapboxRepository
 import com.kevin.multiapiapp.domain.repository.PokemonRepository
 import com.kevin.multiapiapp.domain.repository.SpotifyRepository
 import com.kevin.multiapiapp.domain.repository.UnsplashRepository
+import com.kevin.multiapiapp.domain.usecase.mapbox.RetrieveLocationDetailsUseCase
+import com.kevin.multiapiapp.domain.usecase.mapbox.SearchLocationUseCase
+import com.kevin.multiapiapp.domain.usecase.mapbox.impl.RetrieveLocationDetailsUseCaseImpl
+import com.kevin.multiapiapp.domain.usecase.mapbox.impl.SearchLocationUseCaseImpl
 import com.kevin.multiapiapp.domain.usecase.pokemon.GetAllPokemonUseCase
 import com.kevin.multiapiapp.domain.usecase.pokemon.GetPokemonDetailsUseCase
 import com.kevin.multiapiapp.domain.usecase.pokemon.impl.GetAllPokemonUseCaseImpl
@@ -39,4 +44,14 @@ class DomainModule {
     @Provides
     fun provideSearchUnsplashUseCase(unsplashRepository: UnsplashRepository): SearchUnsplashUseCase =
         SearchUnsplashUseCaseImpl(unsplashRepository)
+
+    @Singleton
+    @Provides
+    fun provideSearchLocationUseCase(mapboxRepository: MapboxRepository): SearchLocationUseCase =
+        SearchLocationUseCaseImpl(mapboxRepository)
+
+    @Singleton
+    @Provides
+    fun provideRetrieveLocationDetailsUseCase(mapboxRepository: MapboxRepository): RetrieveLocationDetailsUseCase =
+        RetrieveLocationDetailsUseCaseImpl(mapboxRepository)
 }

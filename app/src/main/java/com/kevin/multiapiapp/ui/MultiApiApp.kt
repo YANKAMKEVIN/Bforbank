@@ -10,6 +10,7 @@ import androidx.navigation.compose.rememberNavController
 import com.kevin.multiapiapp.common.POKEMON_ID
 import com.kevin.multiapiapp.common.navigation.graph.GraphDestination
 import com.kevin.multiapiapp.presentation.ui.home.HomeScreen
+import com.kevin.multiapiapp.presentation.ui.mapbox.MapboxScreen
 import com.kevin.multiapiapp.presentation.ui.pokemon.details.PokemonDetailsScreen
 import com.kevin.multiapiapp.presentation.ui.pokemon.list.PokemonListScreen
 import com.kevin.multiapiapp.presentation.ui.spotify.SpotifyScreen
@@ -41,5 +42,6 @@ fun AppNavHost(navController: NavHostController) {
         }
         composable(GraphDestination.Spotify.route) { SpotifyScreen() }
         composable(GraphDestination.Unsplash.route) { UnsplashScreen() }
+        composable(GraphDestination.Mapbox.route) { MapboxScreen() }
     }
 }

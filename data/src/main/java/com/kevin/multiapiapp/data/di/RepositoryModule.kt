@@ -1,11 +1,14 @@
 package com.kevin.multiapiapp.data.di
 
+import com.kevin.multiapiapp.data.datasource.mapbox.MapboxDataSource
 import com.kevin.multiapiapp.data.datasource.pokemon.PokemonDataSource
 import com.kevin.multiapiapp.data.datasource.spotify.SpotifyDataSource
 import com.kevin.multiapiapp.data.datasource.unsplash.UnsplashDataSource
+import com.kevin.multiapiapp.data.repository.MapboxRepositoryImpl
 import com.kevin.multiapiapp.data.repository.PokemonRepositoryImpl
 import com.kevin.multiapiapp.data.repository.SpotifyRepositoryImpl
 import com.kevin.multiapiapp.data.repository.UnsplashRepositoryImpl
+import com.kevin.multiapiapp.domain.repository.MapboxRepository
 import com.kevin.multiapiapp.domain.repository.PokemonRepository
 import com.kevin.multiapiapp.domain.repository.SpotifyRepository
 import com.kevin.multiapiapp.domain.repository.UnsplashRepository
@@ -34,6 +37,12 @@ class RepositoryModule {
     @Singleton
     fun provideUnsplashRepository(unsplashDataSource: UnsplashDataSource): UnsplashRepository {
         return UnsplashRepositoryImpl(unsplashDataSource)
+    }
+
+    @Provides
+    @Singleton
+    fun provideMapboxRepository(mapboxDataSource: MapboxDataSource): MapboxRepository {
+        return MapboxRepositoryImpl(mapboxDataSource)
     }
 
 }
