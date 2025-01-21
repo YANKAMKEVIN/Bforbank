@@ -12,9 +12,21 @@ android {
     defaultConfig {
         minSdk = 21
 
-        buildConfigField("String", "SPOTIFY_CLIENT_ID", "\"${project.property("spotifyClientId")}\"")
-        buildConfigField("String", "SPOTIFY_CLIENT_SECRET", "\"${project.property("spotifyClientSecret")}\"")
-
+        buildConfigField(
+            "String",
+            "SPOTIFY_CLIENT_ID",
+            "\"${project.property("spotifyClientId")}\""
+        )
+        buildConfigField(
+            "String",
+            "SPOTIFY_CLIENT_SECRET",
+            "\"${project.property("spotifyClientSecret")}\""
+        )
+        buildConfigField(
+            "String",
+            "UNSPLASH_CLIENT_ID",
+            "\"${project.property("unsplashClientId")}\""
+        )
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true

@@ -3,6 +3,7 @@ package com.kevin.multiapiapp.data.di
 import com.kevin.multiapiapp.data.api.pokemon.PokemonApi
 import com.kevin.multiapiapp.data.api.spotify.SpotifyApi
 import com.kevin.multiapiapp.data.api.spotify.SpotifyAuthApi
+import com.kevin.multiapiapp.data.api.unsplash.UnsplashApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -47,9 +48,20 @@ class ApiModule {
             .create(SpotifyApi::class.java)
     }
 
+    @Provides
+    @Singleton
+    fun provideUnsplashApi(): UnsplashApi {
+        return Retrofit.Builder()
+            .baseUrl(BASE_URL_UNSPLASH)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(UnsplashApi::class.java)
+    }
+
     companion object {
         private const val BASE_URL_POKEMON = "https://pokeapi.co/api/v2/"
         private const val BASE_URL_SPOTIFY_AUTH = "https://accounts.spotify.com/"
         private const val BASE_URL_SPOTIFY = "https://api.spotify.com/"
+        private const val BASE_URL_UNSPLASH = "https://api.unsplash.com"
     }
 }
