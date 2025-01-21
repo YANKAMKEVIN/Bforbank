@@ -1,8 +1,11 @@
 package com.kevin.multiapiapp.data.di
 
+import com.kevin.multiapiapp.data.api.mapbox.MapboxApi
 import com.kevin.multiapiapp.data.api.pokemon.PokemonApi
 import com.kevin.multiapiapp.data.api.spotify.SpotifyApi
 import com.kevin.multiapiapp.data.api.unsplash.UnsplashApi
+import com.kevin.multiapiapp.data.datasource.mapbox.MapboxDataSource
+import com.kevin.multiapiapp.data.datasource.mapbox.impl.MapboxDataSourceImpl
 import com.kevin.multiapiapp.data.datasource.pokemon.PokemonDataSource
 import com.kevin.multiapiapp.data.datasource.pokemon.impl.PokemonDataSourceImpl
 import com.kevin.multiapiapp.data.datasource.spotify.SpotifyDataSource
@@ -36,4 +39,11 @@ class DataSourceModule {
     fun provideUnsplashDataSource(unsplashApi: UnsplashApi): UnsplashDataSource {
         return UnsplashDataSourceImpl(unsplashApi)
     }
+
+    @Provides
+    @Singleton
+    fun provideMapboxDataSource(mapboxApi: MapboxApi): MapboxDataSource {
+        return MapboxDataSourceImpl(mapboxApi)
+    }
+
 }

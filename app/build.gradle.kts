@@ -31,6 +31,11 @@ android {
             "UNSPLASH_CLIENT_ID",
             "\"${project.property("unsplashClientId")}\""
         )
+        buildConfigField(
+            "String",
+            "MAPBOX_ACCESS_TOKEN",
+            "\"${project.property("mapboxAccessToken")}\""
+        )
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -73,6 +78,9 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
+
+    //Mapbox SDK
+    implementation(libs.mapbox)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

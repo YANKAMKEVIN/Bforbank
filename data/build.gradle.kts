@@ -27,6 +27,12 @@ android {
             "UNSPLASH_CLIENT_ID",
             "\"${project.property("unsplashClientId")}\""
         )
+        buildConfigField(
+            "String",
+            "MAPBOX_ACCESS_TOKEN",
+            "\"${project.property("mapboxAccessToken")}\""
+        )
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
