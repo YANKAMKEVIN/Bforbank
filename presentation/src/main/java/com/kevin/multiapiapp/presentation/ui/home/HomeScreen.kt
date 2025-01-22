@@ -39,7 +39,7 @@ fun HomeScreen(navController: NavHostController) {
         )
 
         ApiCard(
-            backgroundColor = Color(0xFFE91E63),
+            backgroundColor = Color(0xFF131646),
             iconResId = R.drawable.ic_spotify,
             title = stringResource(id = R.string.spotify_api),
             description = stringResource(id = R.string.spotify_description),
@@ -57,7 +57,7 @@ fun HomeScreen(navController: NavHostController) {
         )
 
         ApiCard(
-            backgroundColor = Color(0xFFFFEB3B),
+            backgroundColor = Color(0xFFA92F2F),
             iconResId = R.drawable.ic_pokemon,
             title = stringResource(id = R.string.poke_api),
             description = stringResource(id = R.string.poke_description),

@@ -2,6 +2,7 @@ package com.kevin.multiapiapp.presentation.ui.pokemon.details
 
 import android.os.Build
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -22,6 +23,8 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -51,7 +54,15 @@ fun PokemonDetailsScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(top = 20.dp, start = 8.dp, end = 8.dp)
+            .background(
+                brush = Brush.verticalGradient(
+                    colors = listOf(
+                        Color(0xFFA92F2F),
+                        Color(0xFF020000)
+                    )
+                )
+            )
+            .padding(top = 36.dp, start = 8.dp, end = 8.dp)
     ) {
         Image(
             painter = painterResource(R.drawable.ic_background_poke),
@@ -119,61 +130,80 @@ fun PokemonDetailsScreen(
                     ) {
                         Row(
                             modifier = Modifier.fillMaxWidth(),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.Center
+                        ) {
+                            Text(
+                                text = "Informations",
+                                style = MaterialTheme.typography.bodyLarge.copy(
+                                    fontSize = 18.sp,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            )
+                        }
+                        Spacer(modifier = Modifier.height(4.dp))
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             Text(
-                                text = stringResource(R.string.poke_height),
+                                text = "${stringResource(R.string.poke_height)} :",
                                 style = MaterialTheme.typography.bodyLarge.copy(
                                     fontSize = 18.sp,
                                     fontWeight = FontWeight.Bold
                                 )
                             )
-                            Text(": ${state.pokemonDetails?.height}")
+                            Spacer(modifier = Modifier.weight(1f))
+                            Text("${state.pokemonDetails?.height}")
                         }
                         Row(modifier = Modifier.fillMaxWidth()) {
                             Text(
-                                text = stringResource(R.string.poke_weight),
+                                text = "${stringResource(R.string.poke_weight)} :",
                                 style = MaterialTheme.typography.bodyLarge.copy(
                                     fontSize = 18.sp,
                                     fontWeight = FontWeight.Bold
                                 )
                             )
-                            Text(": ${state.pokemonDetails?.weight}")
+                            Spacer(modifier = Modifier.weight(1f))
+                            Text("${state.pokemonDetails?.weight}")
                         }
                         Row(modifier = Modifier.fillMaxWidth()) {
                             Text(
-                                text = stringResource(R.string.poke_base_stat),
+                                text = "${stringResource(R.string.poke_base_stat)} :",
                                 style = MaterialTheme.typography.bodyLarge.copy(
                                     fontSize = 18.sp,
                                     fontWeight = FontWeight.Bold
                                 )
                             )
-                            Text(": ${state.pokemonDetails?.stats?.firstOrNull()?.base_stat}")
+                            Spacer(modifier = Modifier.weight(1f))
+                            Text("${state.pokemonDetails?.stats?.firstOrNull()?.base_stat}")
                         }
                         Row(modifier = Modifier.fillMaxWidth()) {
                             Text(
-                                text = stringResource(R.string.poke_type),
+                                text = "${stringResource(R.string.poke_type)} :",
                                 style = MaterialTheme.typography.bodyLarge.copy(
                                     fontSize = 18.sp,
                                     fontWeight = FontWeight.Bold
                                 )
                             )
+                            Spacer(modifier = Modifier.weight(1f))
                             Text(
-                                text = ": ${state.pokemonDetails?.types?.firstOrNull()?.type}",
+                                text = "${state.pokemonDetails?.types?.firstOrNull()?.type}",
                                 maxLines = 1,
                                 overflow = TextOverflow.Ellipsis,
                             )
                         }
                         Row(modifier = Modifier.fillMaxWidth()) {
                             Text(
-                                text = stringResource(R.string.poke_ability),
+                                text = "${stringResource(R.string.poke_ability)} :",
                                 style = MaterialTheme.typography.bodyLarge.copy(
                                     fontSize = 18.sp,
                                     fontWeight = FontWeight.Bold
                                 )
                             )
+                            Spacer(modifier = Modifier.weight(1f))
                             Text(
-                                text = ": ${state.pokemonDetails?.abilities?.firstOrNull()?.ability}",
+                                text = "${state.pokemonDetails?.abilities?.firstOrNull()?.ability}",
                                 maxLines = 1,
                                 overflow = TextOverflow.Ellipsis,
                             )
@@ -193,7 +223,7 @@ fun PokemonDetailsScreen(
                     .fillMaxWidth()
                     .padding(start = 16.dp),
                 textAlign = TextAlign.Center,
-                color = MaterialTheme.colorScheme.onSurface
+                color = Color.White
             )
         }
     }

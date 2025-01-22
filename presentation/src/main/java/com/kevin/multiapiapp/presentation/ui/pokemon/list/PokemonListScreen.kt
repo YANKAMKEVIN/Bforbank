@@ -2,6 +2,7 @@ package com.kevin.multiapiapp.presentation.ui.pokemon.list
 
 import PokemonItem
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -27,6 +28,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -49,7 +52,18 @@ fun PokemonListScreen(
         if (reachedBottom && !state.isLoadingMore) viewModel.loadPokemonList()
     }
 
-    Box(modifier = Modifier.fillMaxSize()) {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(
+                brush = Brush.verticalGradient(
+                    colors = listOf(
+                        Color(0xFFA92F2F),
+                        Color(0xFF020000)
+                    )
+                )
+            )
+    ) {
         when {
             state.isLoading -> {
                 CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
@@ -76,8 +90,8 @@ fun PokemonListScreen(
                     Row(modifier = Modifier.fillMaxWidth()) {
                         Text(
                             text = stringResource(R.string.poke_title),
-                            style = MaterialTheme.typography.headlineMedium,
-                            modifier = Modifier.padding(bottom = 16.dp, top = 24.dp)
+                            style = MaterialTheme.typography.headlineMedium.copy(color = Color.White),
+                            modifier = Modifier.padding(bottom = 16.dp, top = 32.dp)
                         )
                         Image(
                             painter = painterResource(id = R.drawable.ic_pikachu),
@@ -88,7 +102,7 @@ fun PokemonListScreen(
 
                     Text(
                         text = stringResource(R.string.poke_description),
-                        style = MaterialTheme.typography.bodyMedium,
+                        style = MaterialTheme.typography.bodyMedium.copy(color = Color.White),
                     )
 
                     Spacer(modifier = Modifier.height(16.dp))

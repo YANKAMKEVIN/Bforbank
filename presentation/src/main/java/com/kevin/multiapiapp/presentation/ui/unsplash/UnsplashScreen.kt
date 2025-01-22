@@ -2,6 +2,7 @@ package com.kevin.multiapiapp.presentation.ui.unsplash
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -31,6 +32,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -38,12 +42,14 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavHostController
 import coil.compose.rememberAsyncImagePainter
-import com.kevin.multiapiapp.common.utils.reachedBottom
 import com.kevin.multiapiapp.common.R
+import com.kevin.multiapiapp.common.utils.reachedBottom
 
 @Composable
 fun UnsplashScreen(
+    navController: NavHostController,
     viewModel: UnsplashViewModel = hiltViewModel()
 ) {
     val state by viewModel.state.collectAsState()
@@ -61,17 +67,24 @@ fun UnsplashScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(if (showDialog) MaterialTheme.colorScheme.surface else MaterialTheme.colorScheme.background)
+            .background(
+                brush = Brush.verticalGradient(
+                    colors = listOf(
+                        Color(0xFF6200EE),
+                        Color(0xFF020000)
+                    )
+                )
+            )
             .padding(16.dp)
     ) {
         Text(
             text = stringResource(R.string.unsplash_title_search_photos),
-            style = MaterialTheme.typography.headlineMedium,
+            style = MaterialTheme.typography.headlineMedium.copy(color = Color.White),
             modifier = Modifier.padding(bottom = 16.dp, top = 24.dp)
         )
         Text(
             text = stringResource(R.string.unsplash_description_search_photos),
-            style = MaterialTheme.typography.bodyMedium,
+            style = MaterialTheme.typography.bodyMedium.copy(color = Color.White),
         )
         TextField(
             value = state.query,
@@ -79,7 +92,7 @@ fun UnsplashScreen(
                 viewModel.onQueryChanged(it)
                 viewModel.searchPhotos()
             },
-            label = { Text(stringResource(R.string.unsplash_label_search_field)) },
+            label = { Text(stringResource(R.string.unsplash_title_search_photos)) },
             keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Search),
             keyboardActions = KeyboardActions(onSearch = { viewModel.searchPhotos() }),
             modifier = Modifier
@@ -91,6 +104,21 @@ fun UnsplashScreen(
 
         if (state.photos.isEmpty() && !state.isLoading && state.query.isNotBlank()) {
             Text(text = stringResource(R.string.unsplash_text_no_photos_found))
+        }
+        if (state.photos.isEmpty() && !state.isLoading && state.query.isBlank()) {
+            Column(
+                modifier = Modifier.fillMaxSize(),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Image(
+                    painter = painterResource(R.drawable.ic_unsplash),
+                    contentDescription = "",
+                    colorFilter = ColorFilter.tint(color = Color.White),
+                    modifier = Modifier.size(100.dp)
+                )
+            }
+
         }
         LazyColumn(state = scrollState) {
             items(state.photos) { photo ->
