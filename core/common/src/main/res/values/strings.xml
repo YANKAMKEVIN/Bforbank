@@ -16,7 +16,7 @@
     <string name="poke_description_back">Pokemon back</string>
     <string name="poke_description_front">Pokemon front</string>
     <string name="poke_height">Height</string>
-    <string name="poke_listen_cries">Listen to cries</string>
+    <string name="poke_listen_cries">Cries</string>
     <string name="poke_stop_listen_cries">Stop</string>
     <string name="poke_type">Type</string>
     <string name="poke_weight">Weight</string>
@@ -27,11 +27,17 @@
     <string name="spotify_description_search_tracks">You can search for photos here by typing your query into the search bar. Enjoy!</string>
     <string name="spotify_text_no_tracks_found">No tracks found, please try another search</string>
     <string name="spotify_title_search_tracks">Search for Tracks</string>
+    <string name="spotify_track_forward_ten_description">Forward 10 Seconds</string>
+    <string name="spotify_track_skip_next_description">Skip Next</string>
+    <string name="spotify_track_skip_previous_description">Skip Previous</string>
+    <string name="spotify_track_skip_play_description">Play</string>
+    <string name="top_bar_back_arrow">Back Arrow</string>">
+    <string name="top_bar_add_list">Add list</string>
+    <string name="top_bar_more">More</string>
     <string name="unsplash_api">Unsplash API</string>
     <string name="unsplash_description">Unsplash</string>
     <string name="unsplash_description_search_photos">You can search for photos here by typing your query into the search bar. For some images, you will even find descriptions. Enjoy!</string>
     <string name="unsplash_image_description">Unsplash Image</string>
-    <string name="unsplash_label_search_field">Type your text here</string>
     <string name="unsplash_loading_photos">Loading photos...</string>
     <string name="unsplash_text_no_photos_found">No photos found, please try another search</string>
     <string name="unsplash_title_search_photos">Search for Photos</string>
